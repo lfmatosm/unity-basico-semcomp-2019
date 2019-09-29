@@ -4,7 +4,7 @@ Nesta etapa, iremos introduzir o personagem controlável pelo usuário em nosso 
 
 ### Configurando o sprite sheet do personagem
 
-Na pasta ```Assets/Resources``` de nosso projeto, iremos colocar o sprite sheet ```conker-sprite.png``` que pode ser encontrado [aqui](null).
+Na pasta ```Assets/Resources``` de nosso projeto, iremos colocar o sprite sheet ```conker-sprite.png``` que pode ser encontrado [aqui](https://drive.google.com/drive/folders/1JvF5ncDJGAbjktF3B4yVo5NbdJx1Rgel?usp=sharing).
 ![Localização do sprite no projeto](images/2/1.png?raw=true "Localização do sprite no projeto")
 
 A seguir, na aba ```Inspector``` do sprite, configuramos da mesma forma que fizemos com o Tileset:
