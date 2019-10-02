@@ -25,10 +25,12 @@ Padding -> 1x1<br/>
 
 Ao fim, podemos clicar em ```Apply``` no canto direito desta janela para realizar as modificações. Pronto, já importamos o sprite sheet desejado no nosso projeto! Mas nós ainda não temos nossa pallete do tilemap pronta. Portanto, vamos criar uma!
 
-### Criando a animação do personagem
+### Criando o TileMap
 
-Em nossa cena principal, clicamos com o botão direito em algum espaço vazio da aba e selecionamos ```Create empty```. Podemos nomear este objeto como "Char":
-![Localização do sprite no projeto](images/2/4.png?raw=true "Localização do sprite no projeto")
+Em nossa janela de hierarquia, clicamos com o botão direito em algum espaço vazio e criamos um tilemap ```2D Object -> TileMap```:
+![Localização do sprite no projeto](images/2/3.png?raw=true "Localização do sprite no projeto")
+
+Serão criador um Objeto Grid 
 
 Selecionando o objeto criado, vamos até seu ```Inspector``` e adicionamos o componente ```Sprite Renderer``` no mesmo. Neste componente, selecionamos o campo ```Sprite``` e escolhemos como sua imagem o primeiro frame do sprite que importamos no passo anterior.
 ![Escolha do primeiro frame do personagem (standing frame)](images/2/5.png?raw=true "Escolha do primeiro frame do personagem (standing frame)")
