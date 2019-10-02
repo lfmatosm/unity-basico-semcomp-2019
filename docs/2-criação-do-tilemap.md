@@ -15,13 +15,15 @@ Pixels per unity -> 16, que é o tamanho de cada tile.<br/>
 Filter Mode -> Point, para não criar efeito de blur, já que é uma pixel art.<br/>
 Compression -> None<br/>
 
-A seguir, na aba ```Inspector``` do sprite, configuramos da mesma forma que fizemos com o Tileset:
-![Localização do sprite no projeto](images/2/2.png?raw=true "Localização do sprite no projeto")
-
 Clicamos em ```Sprite Editor```, no menu ```Slice``` e deixamos a configuração da seguinte forma:
-![Localização do sprite no projeto](images/2/3.png?raw=true "Localização do sprite no projeto")
+![Localização do sprite no projeto](images/2/2.png?raw=true "Slice do tileset")
 
-Ao fim, podemos clicar em ```Apply``` no canto direito desta janela para realizar as modificações. Pronto, já importamos o sprite sheet desejado no nosso projeto! Mas nós ainda não temos nenhum personagem em nossa cena. Portanto, devemos criar um!
+Faremos as seguintes opções:
+Slice -> Type -> Grid by cell size<br/>
+Pixel Size -> 16x16<br/>
+Padding -> 1x1<br/>
+
+Ao fim, podemos clicar em ```Apply``` no canto direito desta janela para realizar as modificações. Pronto, já importamos o sprite sheet desejado no nosso projeto! Mas nós ainda não temos nossa pallete do tilemap pronta. Portanto, vamos criar uma!
 
 ### Criando a animação do personagem
 
