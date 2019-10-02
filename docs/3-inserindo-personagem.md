@@ -5,38 +5,38 @@ Nesta etapa, iremos introduzir o personagem controlável pelo usuário em nosso 
 ### Configurando o sprite sheet do personagem
 
 Na pasta ```Assets/Resources``` de nosso projeto, iremos colocar o sprite sheet ```conker-sprite.png``` que pode ser encontrado [aqui](https://drive.google.com/drive/folders/1JvF5ncDJGAbjktF3B4yVo5NbdJx1Rgel?usp=sharing).
-![Localização do sprite no projeto](images/2/1.png?raw=true "Localização do sprite no projeto")
+![Localização do sprite no projeto](images/3/1.png?raw=true "Localização do sprite no projeto")
 
 A seguir, na aba ```Inspector``` do sprite, configuramos da mesma forma que fizemos com o Tileset:
-![Localização do sprite no projeto](images/2/2.png?raw=true "Localização do sprite no projeto")
+![Localização do sprite no projeto](images/3/2.png?raw=true "Localização do sprite no projeto")
 
 Clicamos em ```Sprite Editor```, no menu ```Slice``` e deixamos a configuração da seguinte forma:
-![Localização do sprite no projeto](images/2/3.png?raw=true "Localização do sprite no projeto")
+![Localização do sprite no projeto](images/3/3.png?raw=true "Localização do sprite no projeto")
 
 Ao fim, podemos clicar em ```Apply``` no canto direito desta janela para realizar as modificações. Pronto, já importamos o sprite sheet desejado no nosso projeto! Mas nós ainda não temos nenhum personagem em nossa cena. Portanto, devemos criar um!
 
 ### Criando a animação do personagem
 
 Em nossa cena principal, clicamos com o botão direito em algum espaço vazio da aba e selecionamos ```Create empty```. Podemos nomear este objeto como "Char":
-![Localização do sprite no projeto](images/2/4.png?raw=true "Localização do sprite no projeto")
+![Localização do sprite no projeto](images/3/4.png?raw=true "Localização do sprite no projeto")
 
 Selecionando o objeto criado, vamos até seu ```Inspector``` e adicionamos o componente ```Sprite Renderer``` no mesmo. Neste componente, selecionamos o campo ```Sprite``` e escolhemos como sua imagem o primeiro frame do sprite que importamos no passo anterior.
-![Escolha do primeiro frame do personagem (standing frame)](images/2/5.png?raw=true "Escolha do primeiro frame do personagem (standing frame)")
+![Escolha do primeiro frame do personagem (standing frame)](images/3/5.png?raw=true "Escolha do primeiro frame do personagem (standing frame)")
 
 Selecione novamente o objeto "Char" e abra a aba ```Animation``` no seu Unity. Você verá uma tela como a seguir:
-![Solicitação de criação de animação para o objeto selecionado](images/2/6.png?raw=true "Solicitação de criação de animação para o objeto selecionado")
+![Solicitação de criação de animação para o objeto selecionado](images/3/6.png?raw=true "Solicitação de criação de animação para o objeto selecionado")
 
 Clique no botão ```Create```. Um menu irá aparecer na sua tela orientando-o a escolher o nome da animação que será criada. Dê o nome de "Walk" à animação e salve-a na pasta ```Assets/Animations```. Se esta pasta não existir, a crie.
 
 Agora, o seu menu de animação será similar ao seguinte:
-![Menu de animações disponível](images/2/7.png?raw=true "Menu de animações disponível")
+![Menu de animações disponível](images/3/7.png?raw=true "Menu de animações disponível")
 
 Podemos agora fazer as transições de frames para nosso personagem!
 Clique no botão circular vermelho do lado superior esquerdo do menu de animações. Você verá o seguinte:
-![Modo de criação de animações ativado](images/2/8.png?raw=true "Modo de criação de animações ativado")
+![Modo de criação de animações ativado](images/3/8.png?raw=true "Modo de criação de animações ativado")
 
 Neste momento, você está no modo de criação de animações. Clicando numa marcação de tempo qualquer da lista, você poderá configurar o frame/sprite para este momento específico da animação. Clique no tempo ```0:10``` por agora. 
-![Menu de animação na marcação 0:10](images/2/9.png?raw=true "Menu de animação na marcação 0:10")
+![Menu de animação na marcação 0:10](images/3/9.png?raw=true "Menu de animação na marcação 0:10")
 
 Vá até ```Inspector``` do objeto e selecione o sprite que você quer que seja exibido neste momento de animação.
 
