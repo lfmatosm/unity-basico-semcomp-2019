@@ -23,17 +23,20 @@ Slice -> Type -> Grid by cell size<br/>
 Pixel Size -> 16x16<br/>
 Padding -> 1x1<br/>
 
-Ao fim, podemos clicar em ```Apply``` no canto direito desta janela para realizar as modificações. Pronto, já importamos o sprite sheet desejado no nosso projeto! Mas nós ainda não temos nossa pallete do tilemap pronta. Portanto, vamos criar uma!
+Ao fim, podemos clicar em ```Apply``` no canto direito desta janela para realizar as modificações. Pronto, já importamos o sprite sheet desejado no nosso projeto! Mas nós ainda não temos nossa palette do tilemap pronta. Portanto, vamos criar uma!
 
 ### Criando o TileMap
 
 Em nossa janela de hierarquia, clicamos com o botão direito em algum espaço vazio e criamos um tilemap ```2D Object -> TileMap```:
-![Localização do sprite no projeto](images/2/3.png?raw=true "Localização do sprite no projeto")
+![Localização do sprite no projeto](images/2/3.png?raw=true "Criação do tilemap")
 
-Serão criador um Objeto Grid 
+Serão criados um Objeto Grid e um TileMap, nós usaremos todas as configurações no default da unity.
 
-Selecionando o objeto criado, vamos até seu ```Inspector``` e adicionamos o componente ```Sprite Renderer``` no mesmo. Neste componente, selecionamos o campo ```Sprite``` e escolhemos como sua imagem o primeiro frame do sprite que importamos no passo anterior.
-![Escolha do primeiro frame do personagem (standing frame)](images/2/5.png?raw=true "Escolha do primeiro frame do personagem (standing frame)")
+Agora vamos criar nossa Palette, vamos em ```Windows->2D->Tile Palette```:
+![Localização do sprite no projeto](images/2/4.png?raw=true "Criação do tile palette")
+
+Posicionaremos essa nova janela na interface da maneira mais confortável:
+![Localização do sprite no projeto](images/2/5.png?raw=true "Tile palette")
 
 Selecione novamente o objeto "Char" e abra a aba ```Animation``` no seu Unity. Você verá uma tela como a seguir:
 ![Solicitação de criação de animação para o objeto selecionado](images/2/6.png?raw=true "Solicitação de criação de animação para o objeto selecionado")
