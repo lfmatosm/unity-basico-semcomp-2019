@@ -1,4 +1,4 @@
-## 2 - Inserindo personagem
+## 3 - Inserindo personagem
 
 Nesta etapa, iremos introduzir o personagem controlável pelo usuário em nosso projeto, e configuraremos os inputs para que o jogador comande o objeto.
 
