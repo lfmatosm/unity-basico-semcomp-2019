@@ -1,4 +1,4 @@
-## 2 - Inserindo TileMap
+## 2 - Criando TileMap
 
 Nesta etapa, iremos explicar a função de tilemaps da unity, para assim criarmos o mapa onde o personagem vai se movimentar.
 
@@ -40,12 +40,19 @@ Posicionaremos essa nova janela na interface da maneira mais confortável:
 
 Nessa janela vamos criar uma nova palette e uma pasta em Source para organizarmos as palettes.
 Após isso, vamos arrastar nosso tileset para essa janela.
-
 ![Localização do sprite no projeto](images/2/6.png?raw=true "Setup com tile palette")
 
 Agora com nossa cena e nossa tile palette abertas, podemos começar a desenhar o level com o brush(B)!
-
 ![Localização do sprite no projeto](images/2/7.png?raw=true "Level teste")
+
+Ao criar um tilemap usando pixel perfect, podemos ter um problemas com linhas marcando da seguinte forma:
+![Localização do sprite no projeto](images/2/8.png?raw=true "Linhas de blur")
+
+Para corrigir esse problema vamos em ```Edit -> Project Settings -> Quality``` e desativamos o anti-aliasing.
+
+
+
+
 
 Clique no botão ```Create```. Um menu irá aparecer na sua tela orientando-o a escolher o nome da animação que será criada. Dê o nome de "Walk" à animação e salve-a na pasta ```Assets/Animations```. Se esta pasta não existir, a crie.
 
