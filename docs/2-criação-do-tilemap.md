@@ -6,7 +6,14 @@ Nesta etapa, iremos explicar a função de tilemaps da unity, para assim criarmo
 
 Na pasta ```Assets/Resources``` de nosso projeto, iremos colocar o sprite sheet do tilemap ```TileSet.png``` que pode ser encontrado [aqui](https://drive.google.com/drive/folders/1JvF5ncDJGAbjktF3B4yVo5NbdJx1Rgel?usp=sharing).
 
-![Localização do sprite no projeto](images/2/1.png?raw=true "Localização do sprite no projeto")
+![Localização do sprite no projeto](images/2/1.png?raw=true "Localização do tileset no projeto")
+
+As configurações que devem ser alteradas nessa imagem, para ela funcionar como tilemap, são as seguintes:
+Texture type -> sprite(2D and UI).
+Sprite mode -> Multiple, pois temos vários sprites.
+Pixels per unity -> 16, que é o tamanho de cada tile.
+Filter Mode -> Point, para não criar efeito de blur, já que é uma pixel art.
+Compression -> None
 
 A seguir, na aba ```Inspector``` do sprite, configuramos da mesma forma que fizemos com o Tileset:
 ![Localização do sprite no projeto](images/2/2.png?raw=true "Localização do sprite no projeto")
