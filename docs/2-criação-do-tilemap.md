@@ -38,8 +38,14 @@ Agora vamos criar nossa Palette, vamos em ```Windows->2D->Tile Palette```:
 Posicionaremos essa nova janela na interface da maneira mais confortável:
 ![Localização do sprite no projeto](images/2/5.png?raw=true "Tile palette")
 
-Selecione novamente o objeto "Char" e abra a aba ```Animation``` no seu Unity. Você verá uma tela como a seguir:
-![Solicitação de criação de animação para o objeto selecionado](images/2/6.png?raw=true "Solicitação de criação de animação para o objeto selecionado")
+Nessa janela vamos criar uma nova palette e uma pasta em Source para organizarmos as palettes.
+Após isso, vamos arrastar nosso tileset para essa janela.
+
+![Localização do sprite no projeto](images/2/6.png?raw=true "Setup com tile palette")
+
+Agora com nossa cena e nossa tile palette abertas, podemos começar a desenhar o level com o brush(B)!
+
+![Localização do sprite no projeto](images/2/7.png?raw=true "Level teste")
 
 Clique no botão ```Create```. Um menu irá aparecer na sua tela orientando-o a escolher o nome da animação que será criada. Dê o nome de "Walk" à animação e salve-a na pasta ```Assets/Animations```. Se esta pasta não existir, a crie.
 
