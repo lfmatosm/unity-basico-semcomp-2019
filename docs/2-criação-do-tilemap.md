@@ -50,8 +50,14 @@ Ao criar um tilemap usando pixel perfect, podemos ter um problemas com linhas ma
 
 Para corrigir esse problema vamos em ```Edit -> Project Settings -> Quality``` e desativamos o anti-aliasing.
 
+Agora vamos adicionar uma plataforma na frente da outra tile, para trabalharmos com layers diferentes.
+![Modo de criação de animações ativado](images/2/9.png?raw=true "Novo tilemap")
 
+Vamos criar um novo tilemap dentr do grid, para esse ter um layer maior que o anterior, assim ele ficará na frente em cena.
 
+![Modo de criação de animações ativado](images/2/10.png?raw=true "Tilemap em uso")
+
+Devemos lembrar de escolher o qual o tilemap está ativo naquele momento.
 
 
 Clique no botão ```Create```. Um menu irá aparecer na sua tela orientando-o a escolher o nome da animação que será criada. Dê o nome de "Walk" à animação e salve-a na pasta ```Assets/Animations```. Se esta pasta não existir, a crie.
