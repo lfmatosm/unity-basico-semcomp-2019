@@ -57,5 +57,5 @@ Dentro da pasta criada anteriormente, clique com o botão direito em algum espa�
 
 A continuar.
 
-* [Anterior](1-inicio.md)
-* [Próxima](2-inserindo-personagem.md)
+* [Anterior](2-criação-do-tilemap.md)
+* [Próxima](2-criação-do-tilemap.md)
