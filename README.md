@@ -10,7 +10,7 @@ Minicurso básico em Unity 3D ministrado na Semana da Computação da Universida
 
 ## Tutorial
 
-Os arquivos-texto com o roteiro de implementação encontram-se [aqui](Docs/).
+Os arquivos-texto com o roteiro de implementação encontram-se [aqui](https://github.com/lffloyd/unity-basico-semcomp-2019/tree/master/docs).
 
 ## Créditos
 
