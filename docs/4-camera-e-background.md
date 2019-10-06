@@ -46,14 +46,9 @@ Na pasta ```Assets/Resources/Background``` de nosso projeto, iremos colocar o sp
 
 Lembrando de colocar Pixels per Unit = 16 para manter a proporção com o resto dos sprites
 
+Como Mario não conta com o efeito de parallax, vamos apenas adicionar o background no inicio da cena e cloná-lo até preencher todo cenário. Ctrl + C e Ctrl + V para copiar, arrastamos para o lado segurando Ctrl para eles se fixarem corretamente.
 
+![Localização do sprite no projeto](images/4/7.png?raw=true "Cenário final")
 
-### Colisão do TileMap
-
-Para finalizar, iremos adicionar colisão individual aos tiles, em ambos os tilemaps, iremos adicionar o seguinte componente:
-![Modo de criação de animações ativado](images/2/12.png?raw=true "Colisão")
-
-Assim, nossas plataformas irão funcionar como chão corretamente.
-
-* [Anterior](1-inicio.md)
+* [Anterior](3-inserindo-personagem.md)
 * [Próxima](3-inserindo-personagem.md)
