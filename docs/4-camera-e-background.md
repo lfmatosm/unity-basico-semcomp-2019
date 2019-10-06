@@ -1,5 +1,5 @@
 
-## 2 - Movimentação da Câmera e Background
+## 4 - Movimentação da Câmera e Background
 
 Nesta etapa, iremos adicionar a movimentação da câmera e do background seguindo o personagem.
 
@@ -40,42 +40,12 @@ Por fim iremos associar cada um desses objetos ao script da câmera, arrastando 
 
 ![Localização do sprite no projeto](images/4/6.png?raw=true "Associação script")
 
-### Criando o TileMap
+### Background
 
-Em nossa janela de hierarquia, clicamos com o botão direito em algum espaço vazio e criamos um tilemap ```2D Object -> TileMap```:
-![Localização do sprite no projeto](images/2/3.png?raw=true "Criação do tilemap")
+Na pasta ```Assets/Resources/Background``` de nosso projeto, iremos colocar o sprite sheet ```background.png``` que pode ser encontrado [aqui](https://drive.google.com/drive/folders/1JvF5ncDJGAbjktF3B4yVo5NbdJx1Rgel?usp=sharing).
+![Localização do sprite no projeto](images/3/1.png?raw=true "Localização do sprite no projeto")
 
-Serão criados um Objeto Grid e um TileMap, nós usaremos todas as configurações no default da unity.
 
-Agora vamos criar nossa Palette, vamos em ```Windows->2D->Tile Palette```:
-![Localização do sprite no projeto](images/2/4.png?raw=true "Criação do tile palette")
-
-Posicionaremos essa nova janela na interface da maneira mais confortável:
-![Localização do sprite no projeto](images/2/5.png?raw=true "Tile palette")
-
-Nessa janela vamos criar uma nova palette e uma pasta em Source para organizarmos as palettes.
-Após isso, vamos arrastar nosso tileset para essa janela.
-![Localização do sprite no projeto](images/2/6.png?raw=true "Setup com tile palette")
-
-Agora com nossa cena e nossa tile palette abertas, podemos começar a desenhar o level com o brush(B)!
-![Localização do sprite no projeto](images/2/7.png?raw=true "Level teste")
-
-Ao criar um tilemap usando pixel perfect, podemos ter um problemas com linhas marcando da seguinte forma:
-![Localização do sprite no projeto](images/2/8.png?raw=true "Linhas de blur")
-
-Para corrigir esse problema vamos em ```Edit -> Project Settings -> Quality``` e desativamos o anti-aliasing.
-
-Agora vamos adicionar uma plataforma na frente da outra tile, para trabalharmos com layers diferentes.
-![Modo de criação de animações ativado](images/2/9.png?raw=true "Novo tilemap")
-
-Vamos criar um novo tilemap dentr do grid, para esse ter um layer maior que o anterior, assim ele ficará na frente em cena.
-
-![Modo de criação de animações ativado](images/2/10.png?raw=true "Tilemap em uso")
-
-Devemos lembrar de escolher o qual o tilemap está ativo naquele momento na aba de tile palettes.
-
-Terminaremos nossa cena dessa maneira:
-![Modo de criação de animações ativado](images/2/11.png?raw=true "Cena final")
 
 ### Colisão do TileMap
 
