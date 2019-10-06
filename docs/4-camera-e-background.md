@@ -43,7 +43,8 @@ Por fim iremos associar cada um desses objetos ao script da câmera, arrastando 
 ### Background
 
 Na pasta ```Assets/Resources/Background``` de nosso projeto, iremos colocar o sprite sheet ```background.png``` que pode ser encontrado [aqui](https://drive.google.com/drive/folders/1JvF5ncDJGAbjktF3B4yVo5NbdJx1Rgel?usp=sharing).
-![Localização do sprite no projeto](images/3/1.png?raw=true "Localização do sprite no projeto")
+
+Lembrando de colocar Pixels per Unit = 16 para manter a proporção com o resto dos sprites
 
 
 
