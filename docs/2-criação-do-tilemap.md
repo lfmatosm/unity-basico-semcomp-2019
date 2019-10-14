@@ -1,4 +1,4 @@
-## 2 - Criando TileMap
+## 2 - Criando Tilemap
 
 Nesta etapa, iremos explicar a função de tilemaps da unity, para assim criarmos o mapa onde o personagem vai se movimentar.
 
@@ -25,7 +25,7 @@ Padding -> 1x1<br/>
 
 Ao fim, podemos clicar em ```Apply``` no canto direito desta janela para realizar as modificações. Pronto, já importamos o sprite sheet desejado no nosso projeto! Mas nós ainda não temos nossa palette do tilemap pronta. Portanto, vamos criar uma!
 
-### Criando o TileMap
+### Criando o Tilemap
 
 Em nossa janela de hierarquia, clicamos com o botão direito em algum espaço vazio e criamos um tilemap ```2D Object -> TileMap```:
 ![Localização do sprite no projeto](images/2/3.png?raw=true "Criação do tilemap")
@@ -62,7 +62,7 @@ Devemos lembrar de escolher o qual o tilemap está ativo naquele momento na aba 
 Terminaremos nossa cena dessa maneira:
 ![Modo de criação de animações ativado](images/2/11.png?raw=true "Cena final")
 
-### Colisão do TileMap
+### Colisão do Tilemap
 
 Para finalizar, iremos adicionar colisão individual aos tiles, em ambos os tilemaps, iremos adicionar o seguinte componente:
 ![Modo de criação de animações ativado](images/2/12.png?raw=true "Colisão")
