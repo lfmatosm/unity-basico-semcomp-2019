@@ -142,7 +142,7 @@ public float jumpForce = 2f;
 public float maxVerticalSpeed = 3f;
 ```
 
-Já a função ```OnCollisionEnter2D``` avalia se está ocorrendo agora uma colisão com algum objeto com a tag "TileMap". Se sim, é porquê estamos no chão do nível. De froma análoga, a função ```OnCollisionExit2D```prevê o momento em que o nosso personagem perde o contato com o chão -- ou seja, quando pula. A função ```Jump``` adiciona força e velocidade de forma a realuzar o pulo desejado. Adicione as funções a seguir em seu script:
+Já a função ```OnCollisionEnter2D``` avalia se está ocorrendo agora uma colisão com algum objeto com a tag "TileMap". Se sim, é porquê estamos no chão do nível. De froma análoga, a função ```OnCollisionExit2D```prevê o momento em que o nosso personagem perde o contato com o chão -- ou seja, quando pula. A função ```Jump``` adiciona força e velocidade de forma a realizar o pulo desejado. Adicione as funções a seguir em seu script:
 
 ```csharp
 private void OnCollisionEnter2D(Collision2D other)
@@ -183,6 +183,11 @@ void FixedUpdate()
         rb2d.velocity = new Vector2(Mathf.Sign(rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
 }
 ```
+
+Com as configurações acima, você poderá perceber que o pulo do personagem está alcançando uma altura muito alta. Uma forma de evitar isso é selecionar o objeto do personagem na cena, ir até seu ```Inspector``` e configurar na seção ```Rigidbody2D``` a gravidade do corpo para 3.
+![Alteração da gravidade para o corpo do personagem](images/3/14.png?raw=true "Alteração da gravidade para o corpo do personagem")
+
+Com este valor, os pulos serão mais condizentes com o comportamento esperado.
 
 * [Anterior](2-criação-do-tilemap.md)
 * [Próxima](4-camera-e-background.md)
