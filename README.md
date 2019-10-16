@@ -4,7 +4,7 @@ Minicurso básico em Unity 3D ministrado na Semana da Computação da Universida
 
 ## Pré-requisitos
 
-* Unity Engine >= [2018.3.0](https://unity3d.com/pt/get-unity/download/archive) - qualquer versão acima de 2019.3.0 provavelmente não trará problemas no acompanhamento deste tutorial e/ou execução deste código-fonte
+* [Unity Engine](https://unity3d.com/pt/get-unity/download) >= [2018.3.0](https://unity3d.com/pt/get-unity/download/archive) - qualquer versão acima de 2019.3.0 provavelmente não trará problemas no acompanhamento deste tutorial e/ou execução deste código-fonte
 * [VS Code](https://code.visualstudio.com/download) - ferramenta recomendada (opcional) para edição dos scripts C#
     * [Unity Code Snippets](https://marketplace.visualstudio.com/items?itemName=kleber-swf.unity-code-snippets) - para auxílio na escrita de scripts
 
