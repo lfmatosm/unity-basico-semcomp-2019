@@ -11,42 +11,28 @@ A seguir, na aba ```Inspector``` do sprite, configuramos da mesma forma que fize
 ![Localização do sprite no projeto](images/3/2.png?raw=true "Localização do sprite no projeto")
 
 Clicamos em ```Sprite Editor```, no menu ```Slice``` e deixamos a configuração da seguinte forma:
-![Localização do sprite no projeto](images/3/3.png?raw=true "Localização do sprite no projeto")
+![Localização do sprite no projeto](images/3/18.png?raw=true "Localização do sprite no projeto")
 
-Ao fim, podemos clicar em ```Apply``` no canto direito desta janela para realizar as modificações. Pronto, já importamos o sprite sheet desejado no nosso projeto! Mas nós ainda não temos nenhum personagem em nossa cena. Portanto, devemos criar um!
+Outras configurações podem ser realizadas para importar um sprite sheet, mas iremos utilizar a ilustrada acima em nosso caso.
 
-### Criando a animação do personagem
+Clique em "Slice". Você perceberá que o sprite sheet foi sobreposto por uma quantidade de figuras retangulares, que provavelmente não estão limitando corretamente cada frame de animação do sprite sheet.
+
+Felizmente, o Unity permite que cliquemos em cada um desses retângulos e ajustemos sua posição de dimensões manualmente, de forma que consigamos delimitar de forma mais precisa os sprites de que precisamos. Reorganize os frames da forma que achar melhor e, por fim, clique no botão ```Apply``` no canto superior direito da janela para salvar a configuração.
+![Localização do sprite no projeto](images/3/19.png?raw=true "Localização do sprite no projeto")
+
+A configuração que criamos nesta etapa nos auxiliará no momento de criação das animações para nosso personagem.
+
+### Controlando o personagem por meio do teclado
 
 Em nossa cena principal, clicamos com o botão direito em algum espaço vazio da aba e selecionamos ```Create empty```. Podemos nomear este objeto como "Char":
 ![Localização do sprite no projeto](images/3/4.png?raw=true "Localização do sprite no projeto")
 
-Selecionando o objeto criado, vamos até seu ```Inspector``` e adicionamos o componente ```Sprite Renderer``` no mesmo. Neste componente, selecionamos o campo ```Sprite``` e escolhemos como sua imagem o primeiro frame do sprite que importamos no passo anterior.
+Selecionando o objeto criado, vamos até seu ```Inspector``` e adicionamos o componente ```Sprite Renderer``` no mesmo. Neste componente, selecionamos o campo ```Sprite``` e escolhemos como sua imagem o primeiro frame do sprite que importamos no passo de importação do sprite.
 ![Escolha do primeiro frame do personagem (standing frame)](images/3/5.png?raw=true "Escolha do primeiro frame do personagem (standing frame)")
 
-Selecione novamente o objeto "Char" e abra a aba ```Animation``` no seu Unity. Você verá uma tela como a seguir:
-![Solicitação de criação de animação para o objeto selecionado](images/3/6.png?raw=true "Solicitação de criação de animação para o objeto selecionado")
+No ```Sprite Renderer``` também devemos configurar o parâmetro ```Order in Layer``` de forma que o personagem seja visível na tela e não fique atrás de algum elemento de background. Configure o valor desta propriedade para 1.
 
-Clique no botão ```Create```. Um menu irá aparecer na sua tela orientando-o a escolher o nome da animação que será criada. Dê o nome de "Walk" à animação e salve-a na pasta ```Assets/Animations```. Se esta pasta não existir, a crie.
-
-Agora, o seu menu de animação será similar ao seguinte:
-![Menu de animações disponível](images/3/7.png?raw=true "Menu de animações disponível")
-
-Podemos agora fazer as transições de frames para nosso personagem!
-Clique no botão circular vermelho do lado superior esquerdo do menu de animações. Você verá o seguinte:
-![Modo de criação de animações ativado](images/3/8.png?raw=true "Modo de criação de animações ativado")
-
-Neste momento, você está no modo de criação de animações. Clicando numa marcação de tempo qualquer da lista, você poderá configurar o frame/sprite para este momento específico da animação. Clique no tempo ```0:10``` por agora. 
-![Menu de animação na marcação 0:10](images/3/9.png?raw=true "Menu de animação na marcação 0:10")
-
-Vá até ```Inspector``` do objeto e selecione o sprite que você quer que seja exibido neste momento de animação.
-
-Feito isso, você pode clicar em uma nova marcação de tempo e configurar outro frame/sprite, e assim por diante. Finalizada sua criação, clique novamente no botão vermelho para salvar a animação.
-![Menu de animação com animação criada](images/3/10.png?raw=true "Menu de animação com animação criada")
-
-Pronto, animamos nosso personagem! Você pode reposicioná-lo na cena para o lugar que achar mais adequado. Clicando em ```Play``` no centro superior do Unity, veremos nosso personagem movimentando-se!
-![Animação do personagem exibida no Unity](images/3/conker.gif?raw=true "Animação do personagem exibida no Unity")
-
-### Controlando o personagem por meio do teclado
+Ainda, adicione o componente ```Polygon Collider 2D``` no objeto. Este componente será útil quando desejarmos realizar colisão com outros elementos de cena.
 
 Para comandar nosso personagem, deveremos realizar alguns novos passos. Mas, antes disso, precisaremos criar uma pasta ```Assets/Scripts``` para manter nosso projeto organizado.
 ![Alt](images/3/11.png?raw=true "Alt")
@@ -138,8 +124,8 @@ Inicialmente adicionamos uma nova variável para controlar quando o personagem e
 
 ```csharp
 private bool grounded = true;
-public float jumpForce = 2f;
-public float maxVerticalSpeed = 3f;
+public float jumpForce = 5f;
+public float maxVerticalSpeed = 8f;
 ```
 
 Já a função ```OnCollisionEnter2D``` avalia se está ocorrendo agora uma colisão com algum objeto com a tag "TileMap". Se sim, é porquê estamos no chão do nível. De froma análoga, a função ```OnCollisionExit2D```prevê o momento em que o nosso personagem perde o contato com o chão -- ou seja, quando pula. A função ```Jump``` adiciona força e velocidade de forma a realizar o pulo desejado. Adicione as funções a seguir em seu script:
@@ -184,10 +170,97 @@ void FixedUpdate()
 }
 ```
 
-Com as configurações acima, você poderá perceber que o pulo do personagem está alcançando uma altura muito alta. Uma forma de evitar isso é selecionar o objeto do personagem na cena, ir até seu ```Inspector``` e configurar na seção ```Rigidbody2D``` a gravidade do corpo para 3.
+Com as configurações acima, você poderá perceber que o pulo do personagem está alcançando uma altura muito alta. Uma forma de evitar isso é selecionar o objeto do personagem na cena, ir até seu ```Inspector``` e configurar na seção ```Rigidbody2D``` a gravidade do corpo para um valor adequado >= 1.
 ![Alteração da gravidade para o corpo do personagem](images/3/14.png?raw=true "Alteração da gravidade para o corpo do personagem")
 
 Com este valor, os pulos serão mais condizentes com o comportamento esperado.
+
+Entretanto, até este momento nosso personagem não se movimenta de forma natural. Para isso, devemos criar animações.
+
+### Criando a animação do personagem
+
+Selecione novamente o objeto "Char" e abra a aba ```Animation``` no seu Unity. Você verá uma tela como a seguir:
+![Solicitação de criação de animação para o objeto selecionado](images/3/6.png?raw=true "Solicitação de criação de animação para o objeto selecionado")
+
+Clique no botão ```Create```. Um menu irá aparecer na sua tela orientando-o a escolher o nome da animação que será criada. Dê o nome de "Stand" à animação e salve-a na pasta ```Assets/Animations```. Se esta pasta não existir, a crie. Esta será a animação que o personagem terá quando estiver parado. No nosso caso, esta "animação" terá apenas um frame. Posteriormente, a animação de caminhada ("Walk") terá mais frames.
+
+Agora, o seu menu de animação será similar ao seguinte:
+![Menu de animações disponível](images/3/15.png?raw=true "Menu de animações disponível")
+
+Podemos agora fazer as transições de frames para nosso personagem!
+Clique no botão circular vermelho do lado superior esquerdo do menu de animações. Você verá o seguinte:
+![Modo de criação de animações ativado](images/3/16.png?raw=true "Modo de criação de animações ativado")
+
+Neste momento, você está no modo de criação de animações. Clicando numa marcação de tempo qualquer da lista, você poderá configurar o frame/sprite para este momento específico da animação. Clique no tempo ```0:00``` por agora. 
+![Menu de animação na marcação 0:00](images/3/16.png?raw=true "Menu de animação na marcação 0:00")
+
+Vá até ```Inspector``` do objeto e selecione o sprite que você quer que seja exibido neste momento de animação. Para isso, vá até o componente ```Sprite Renderer``` no canto direito de seu Unity e configure o frame/sprite desejado:
+![Menu de animação na marcação 0:00](images/3/17.png?raw=true "Menu de animação na marcação 0:00")
+
+Feito isso, como queremos inicialmente criar o "Stand" com apenas um frame, nosso trabalho está finalizado. Clicamos então no botão vermelho para salvar esta animação.
+
+O passo seguinte efetivamente trabalhará o uso de animação. Podemos agora criar a animação de caminhada, para dar maior sensação de "vida" a nosso jogo. Para tal, clique no canto inferior esquerdo no botão com o nome da animação Stand criada acima. Um menu de opções surgirá. Clique em ```Create New Clip...```. Você verá novamente a tela inicial de animação:
+![Menu de animações disponível](images/3/7.png?raw=true "Menu de animações disponível")
+
+Assim como na etapa anterior, você deve agora clicar no botão vermelho desta seção para iniciar o modo de criação. Feito isso, você verá uma tela como a seguinte:
+![Menu de animações disponível](images/3/8.png?raw=true "Menu de animações disponível")
+
+A sequência de marcações de tempo exibida nesta tela representa os momentos de animação de nosso personagem. Clicando em alguma das marcações, poderemos escolher o frame estático que deve ser exibido neste momento de animação escolhido. Sendo assim, clique na marcação ```0:10```. Vá até o ```Inspector``` no canto direito do seu Unity e selecione o frame desejado, da mesma forma que fizemos no passo anterior.
+
+Agora, podemos configurar o frame a ser exibido em alguma outra marcação de tempo. Você pode selecionar ```0:20``` e escolher uma imagem distinta da anterior. Esta configuração já é suficiente para perceber a movimentação do sprite. Caso queira, continue configurando mais frames em marcações de tempo. Quando tiver finalizado, clique novamente no botão vermelho para desativar o modo de criação de animações. Na mesma tela, você poderá visualizar um preview da animação criada. Clique no botão ```Play``` na mesma linha do botão vermelho de criação de animação e verifique se o resultado é o desejado.
+
+Repare que, a qualquer momento, pode-se abrir novamente a aba "Animation" de seu Unity e alterar quaisquer animações criadas para seus personagens.
+
+Pronto! Conseguimos criar nossa animação básica. Mas e agora, como poderemos vê-la enquanto jogamos? E melhor, como as animações são trocadas dependendo do estado de nosso objeto? É o que veremos a seguir!
+
+## Controlando o estado das animações
+
+Abra a aba ```Project```. Verifique que dentro de sua pasta ```Assets/Animations``` existe um objeto com o nome de seu personagem.
+![Menu de animações disponível](images/3/20.png?raw=true "Menu de animações disponível")
+
+Esse é o nosso [Animator](https://learn.unity.com/tutorial/controlling-animation). Por meio do ```Animator``` poderemos configurar as transições de animação do nosso personagem. Dê um duplo clique neste componente. Você verá uma tela como a seguir:
+![Menu de animações disponível](images/3/21.png?raw=true "Menu de animações disponível")
+
+Os quadrados na imagem representam os estados de animação, e a transição representa uma mudança de animação. O estado "Entry" não representa animação alguma, e é apenas o estado inicial do objeto. "Any State" é um estado em que quaisquer transições saindo dele representam mudanças de animação que podem ocorrer independentemente do estado atual de animação. A sentra "Entry -> Stand" em laranja representa que "Stand" é a animação padrão do nosso objeto. Para saber mais sobre o Animator, leia a documentação do Unity. Como nosso exemplo é bem simples, usaremos o Animator apenas para alternar entre o personagem estático e caminhando.
+
+Para tal, precisaremos manipular algumas variáveis em nosso script criado anteriormente para o personagem. Na aba ```Parameters```, clique no botão ```+```. Crie uma variável Float com nome "Speed" e valor 0:
+![Menu de animações disponível](images/3/22.png?raw=true "Menu de animações disponível")
+
+Agora, clique com o botão direito no estado "Stand" e crie uma transição para "Walk" com ```Make Transition```. Clique na transição criada e a configure da seguinte forma:
+![Menu de animações disponível](images/3/23.png?raw=true "Menu de animações disponível")
+
+Crie agora uma transição de "Walk -> Stand" e a configure assim:
+![Menu de animações disponível](images/3/24.png?raw=true "Menu de animações disponível")
+
+Nossas transições já estão configuradas no Animator. Só precisamos agora manipular a variável "Speed" dentro do script do personagem de forma que as transições sejam acionadas e as animações trocadas quando preciso.
+
+Abra o ```Character.cs```. Certifique-se de deixar o método ```FixedUpdate``` da seguinte maneira - na prática, apenas uma linha é adicionada:
+
+```csharp
+void FixedUpdate()
+{
+    float h = Input.GetAxis("Horizontal");
+
+    animator.SetFloat("Speed", Mathf.Abs(h));
+
+    if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        Jump();
+
+    if ((lookingToTheRight && h < 0) || (!lookingToTheRight && h > 0))
+        FlipSprite();
+        
+    if (h * rb2d.velocity.x < maxSpeed)
+        rb2d.AddForce(Vector2.right * h * moveForce);
+
+    if (Mathf.Abs(rb2d.velocity.x) > maxSpeed)
+        rb2d.velocity = new Vector2(Mathf.Sign(rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
+}
+```
+
+Essa linha certifica que a variável "Speed" do Animator será configurada para um valor maior que 0.1 quando movimentarmos o personagem para qualquer direção (esquerda ou direita). Caso contrário, se o personagem estiver parado, "Speed" será um valor menor que 0.1.
+
+Entre no ```Play Mode``` do Unity e teste o resultado.
+
 
 * [Anterior](2-criação-do-tilemap.md)
 * [Próxima](4-camera-e-background.md)

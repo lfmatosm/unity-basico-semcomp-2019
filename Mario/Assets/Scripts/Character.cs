@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    public Animator animator;
+
     public float moveForce = 365f;
     public float jumpForce = 2f;
     public float maxSpeed = 5f;
@@ -22,6 +24,8 @@ public class Character : MonoBehaviour
     void FixedUpdate()
     {
         float h = Input.GetAxis("Horizontal");
+
+        animator.SetFloat("Speed", Mathf.Abs(h));
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
             Jump();

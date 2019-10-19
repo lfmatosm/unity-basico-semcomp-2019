@@ -26,7 +26,7 @@ public class EnemyAI : MonoBehaviour
         rgb2d = GetComponent<Rigidbody2D>();
 
         if (target == null) {
-            Debug.LogError('Jogador não encontrado');
+            Debug.LogError("Jogador não encontrado");
             return;
         }
 
@@ -35,12 +35,11 @@ public class EnemyAI : MonoBehaviour
         StartCoroutine(UpdatePath());
     }
 
-    IENumerator UpdatePath() {
-        if (target = null) {
-            return false;
-        }
+    IEnumerator UpdatePath() {
+        if (target = null) yield return false;
+        
         seeker.StartPath(transform.position, target.position, OnPathComplete);
-        yield new return WaitForSeconds(1f/updateRate);
+        yield return new WaitForSeconds(1f/updateRate);
         StartCoroutine(UpdatePath());
     }
 
@@ -52,37 +51,24 @@ public class EnemyAI : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        if (target = null) {
-            return;
-        }
-
-        if (path == null) {
-            return;
-        }
+        if (target == null || path == null) return;
 
         if (currentWaypoint >= path.vectorPath.Count) {
             if (pathIsEnded) return;
 
-            Debug.Log('End of path reached');
+            Debug.Log("End of path reached");
             pathIsEnded = true;
             return;
         }
 
         pathIsEnded = false;
 
-        Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized();
-        dir *= speed * Time.fixedDeltaTime();
+        Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+        dir *= speed * Time.fixedDeltaTime;
 
         rgb2d.AddForce(dir, fMode);
 
-        float dist = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint];
-        if (dist < nextWaypointDistance) {
-            currentWaypoint++;
-        }
-    }
-    
-    void Update()
-    {
-        
+        float dist = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
+        if (dist < nextWaypointDistance) currentWaypoint++;
     }
 }
