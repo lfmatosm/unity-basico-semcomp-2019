@@ -4,7 +4,7 @@ Nesta etapa, iremos introduzir o personagem controlável pelo usuário em nosso 
 
 ### Configurando o sprite sheet do personagem
 
-Na pasta ```Assets/Resources``` de nosso projeto, iremos colocar o sprite sheet ```conker-sprite.png``` que pode ser encontrado [aqui](https://drive.google.com/drive/folders/1JvF5ncDJGAbjktF3B4yVo5NbdJx1Rgel?usp=sharing).
+Na pasta ```Assets/Resources``` de nosso projeto, iremos colocar o sprite sheet ```mario_dft.png``` que pode ser encontrado [aqui](https://drive.google.com/drive/folders/1JvF5ncDJGAbjktF3B4yVo5NbdJx1Rgel?usp=sharing).
 ![Localização do sprite no projeto](images/3/1.png?raw=true "Localização do sprite no projeto")
 
 A seguir, na aba ```Inspector``` do sprite, configuramos da mesma forma que fizemos com o Tileset:
@@ -213,7 +213,7 @@ Repare que, a qualquer momento, pode-se abrir novamente a aba "Animation" de seu
 
 Pronto! Conseguimos criar nossa animação básica. Mas e agora, como poderemos vê-la enquanto jogamos? E melhor, como as animações são trocadas dependendo do estado de nosso objeto? É o que veremos a seguir!
 
-## Controlando o estado das animações
+### Controlando o estado das animações
 
 Abra a aba ```Project```. Verifique que dentro de sua pasta ```Assets/Animations``` existe um objeto com o nome de seu personagem.
 ![Menu de animações disponível](images/3/20.png?raw=true "Menu de animações disponível")
@@ -261,6 +261,11 @@ Essa linha certifica que a variável "Speed" do Animator será configurada para 
 
 Entre no ```Play Mode``` do Unity e teste o resultado.
 
+#### Mais informações
+
+* [Animação 2D com Animator](https://www.youtube.com/watch?v=hkaysu1Z-N8)
+
+##### Continuando...
 
 * [Anterior](2-criação-do-tilemap.md)
 * [Próxima](4-camera-e-background.md)

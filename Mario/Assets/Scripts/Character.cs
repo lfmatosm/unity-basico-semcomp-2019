@@ -5,15 +5,12 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public Animator animator;
-
     public float moveForce = 365f;
     public float jumpForce = 2f;
     public float maxSpeed = 5f;
-
     public float maxVerticalSpeed = 3f;
     private Rigidbody2D rb2d;
     private bool lookingToTheRight = true;
-
     private bool grounded = true;
 
     void Awake()
@@ -32,12 +29,24 @@ public class Character : MonoBehaviour
 
         if ((lookingToTheRight && h < 0) || (!lookingToTheRight && h > 0))
             FlipSprite();
-        
+
         if (h * rb2d.velocity.x < maxSpeed)
             rb2d.AddForce(Vector2.right * h * moveForce);
 
         if (Mathf.Abs(rb2d.velocity.x) > maxSpeed)
             rb2d.velocity = new Vector2(Mathf.Sign(rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("SimpleEnemy"))
+        {
+            SimpleEnemy enemy = other.GetComponent<SimpleEnemy>();
+            if (other == enemy.head)
+            {
+                enemy.Kill();
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -46,7 +55,8 @@ public class Character : MonoBehaviour
             grounded = true;
     }
 
-    private void OnCollisionExit2D(Collision2D other) {
+    private void OnCollisionExit2D(Collision2D other)
+    {
         if (other.gameObject.CompareTag("TileMap"))
             grounded = false;
     }
@@ -60,8 +70,8 @@ public class Character : MonoBehaviour
     void FlipSprite()
     {
         lookingToTheRight = !lookingToTheRight;
-		Vector3 scale = transform.localScale;
-		scale.x *= -1;
-		transform.localScale = scale;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 }

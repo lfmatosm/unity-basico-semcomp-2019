@@ -50,5 +50,7 @@ Como Mario não conta com o efeito de parallax, vamos apenas adicionar o backgro
 
 ![Localização do sprite no projeto](images/4/7.png?raw=true "Cenário final")
 
+##### Continuando...
+
 * [Anterior](3-inserindo-personagem.md)
-* [Próxima](3-inserindo-personagem.md)
+* [Próxima](5-inserindo-inimigo.md)

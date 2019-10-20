@@ -69,5 +69,7 @@ Para finalizar, iremos adicionar colisão individual aos tiles, em ambos os tile
 
 Assim, nossas plataformas irão funcionar como chão corretamente.
 
+##### Continuando...
+
 * [Anterior](1-inicio.md)
 * [Próxima](3-inserindo-personagem.md)
