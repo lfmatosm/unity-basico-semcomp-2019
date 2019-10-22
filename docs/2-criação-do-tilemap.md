@@ -63,8 +63,7 @@ Terminaremos nossa cena dessa maneira:
 
 ### Colisão do Tilemap
 
-Para finalizar, iremos adicionar colisão individual aos tiles, em ambos os tilemaps, iremos adicionar o seguinte componente:
-![Modo de criação de animações ativado](images/2/12.png?raw=true "Colisão")
+Para finalizar, iremos adicionar colisão aos tiles, para isso usaremos componentes ``` Box Collider 2D ``` para criar a colisão individual do cenário.
 
 Assim, nossas plataformas irão funcionar como chão corretamente.
 
