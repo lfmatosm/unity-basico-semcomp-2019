@@ -32,7 +32,7 @@ Selecionando o objeto criado, vamos até seu ```Inspector``` e adicionamos o com
 
 No ```Sprite Renderer``` também devemos configurar o parâmetro ```Order in Layer``` de forma que o personagem seja visível na tela e não fique atrás de algum elemento de background. Configure o valor desta propriedade para 1.
 
-Ainda, adicione o componente ```Polygon Collider 2D``` no objeto. Este componente será útil quando desejarmos realizar colisão com outros elementos de cena.
+Ainda, adicione o componente ```Circle Collider 2D``` no objeto. Este componente será usado para a colisão do pé do personagem, evitando travamentos no chão, e um componente ```Square Collider 2D``` para o corpo, nesse associaremos um ``` Material 2D ``` com Friction = 0, evitando travamentos com a parede.
 
 Para comandar nosso personagem, deveremos realizar alguns novos passos. Mas, antes disso, precisaremos criar uma pasta ```Assets/Scripts``` para manter nosso projeto organizado.
 ![Alt](images/3/11.png?raw=true "Alt")
