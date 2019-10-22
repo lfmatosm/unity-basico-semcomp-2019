@@ -21,7 +21,6 @@ Clicamos em ```Sprite Editor```, no menu ```Slice``` e deixamos a configuração
 Faremos as seguintes opções:
 Slice -> Type -> Grid by cell size<br/>
 Pixel Size -> 16x16<br/>
-Padding -> 1x1<br/>
 
 Ao fim, podemos clicar em ```Apply``` no canto direito desta janela para realizar as modificações. Pronto, já importamos o sprite sheet desejado no nosso projeto! Mas nós ainda não temos nossa palette do tilemap pronta. Portanto, vamos criar uma!
 
