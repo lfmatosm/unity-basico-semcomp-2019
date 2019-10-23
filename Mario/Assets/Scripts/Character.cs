@@ -18,10 +18,12 @@ public class Character : MonoBehaviour
     public CircleCollider2D feet;
     Transform target;
     public Sprite deathSprite;
+    SpriteRenderer spriteRenderer;
 
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void FixedUpdate()
@@ -33,17 +35,13 @@ public class Character : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
             Jump();
 
-        
         if (Input.GetKeyDown("p"))
-        {
-            isDead = true;
-            target = transform;
-            target.transform.position = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
-        }
+            Death();
 
         if (isDead)
         {
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = deathSprite;
+            animator.enabled = false;
+            spriteRenderer.sprite = deathSprite;
             transform.position = Vector3.MoveTowards(transform.position, target.position, 1 * Time.deltaTime);
             body.isTrigger = true;
             feet.isTrigger = true;
@@ -95,6 +93,8 @@ public class Character : MonoBehaviour
 
     void Death()
     {
-
+        isDead = true;
+        target = transform;
+        target.transform.position = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
     }
 }
