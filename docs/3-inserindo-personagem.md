@@ -96,7 +96,16 @@ Apesar de que o personagem já se movimenta, a orientação de seu sprite está 
 private bool lookingToTheRight = true;
 ```
 
-Essa variável indica a orientação do objeto em qualquer dado momento da execução da cena. Para manipular tal variável, uma função ```FlipSprite``` deve ser cirada:
+Essa variável indica a orientação do objeto em qualquer dado momento da execução da cena. Para manipular tal variável, uma função ```FlipSprite``` deve ser criada:
+
+```csharp
+void FlipSprite()
+{
+    lookingToTheRight = !lookingToTheRight;
+    transform.Rotate(0, 180, 0);
+    transform.Translate(-transform.localScale.x / 2, 0, 0);
+}
+```
 
 A única coisa que está função faz é inverter a orientação no eixo x por meio da manipulação da escala do objeto, fazendo o personagem "olhar" para a esquerda e para a direita conforme comandado pelo usuário. Para fazer uso dessa função em nosso script, podemos inserir mais um if dentro de ```FixedUpdate``` da seguinte maneira:
 

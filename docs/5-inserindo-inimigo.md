@@ -113,12 +113,14 @@ No ```Inspector``` do Prefab, certifique-se agora de que as variáveis públicas
 Inicialmente, iremos realizar a colisão em que o inimigo é destruído, ou seja, quando o protagonista pula na cabeça do inimigo. No script adicione a função:
 
 ```csharp
-public void Kill()
-{
-    animator.SetBool("IsAlive", false);
-    deathTime = animator.GetCurrentAnimatorStateInfo(0).length + Time.time;
-    isAlive = false;
-}
+    public void Kill()
+    {
+        animator.SetBool("IsAlive", false);
+        deathTime = animator.GetCurrentAnimatorStateInfo(0).length + Time.time;
+        isAlive = false;
+        body.isTrigger = true;
+        rb2d.gravityScale = 0;
+    }
 ```
 
 Essa função será responsável por ativar a animação de morte que criamos anteriormente. Além disso, computa o momento em que o objeto do inimigo deverá ser destruído da tela (ou seja, após o fim da animação de morte). A variável ```isAlive``` será usada em nosso ```FixedUpdate``` da seguinte forma:
@@ -138,18 +140,22 @@ private void FixedUpdate()
 }
 ```
 
-Dessa maneira, o inimigo só irá se movimentar caso esteja vivo. Agora, iremos alterar o ```Character.cs```. Adicione uma nova função neste script:
+Dessa maneira, o inimigo só irá se movimentar caso esteja vivo. Agora, iremos alterar o ``` SimpleEnemy.cs```. Adicione uma nova função neste script:
 
 ```csharp
-private void OnTriggerEnter2D(Collider2D other)
-{
-    if (other.gameObject.CompareTag("SimpleEnemy"))
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        SimpleEnemy enemy = other.GetComponent<SimpleEnemy>();
-        if (other == enemy.head)
-            enemy.Kill();
+        if (other.gameObject.CompareTag("TileMap"))
+        {
+            speed = -speed;
+            if ((lookingToTheRight && speed < 0) || (!lookingToTheRight && speed > 0))
+                FlipSprite();
+        }
+        if (other.GetType() == typeof(CircleCollider2D) && other.gameObject.CompareTag("Mario"))
+        {
+            this.Kill();
+        }
     }
-}
 ```
 
 Essa função verifica se o protagonista atingiu a cabeça do inimigo. Caso positivo, o segundo é eliminado. ```GetComponent``` é um método que nos dá acesso ao script ```SimpleEnemy.cs``` associado ao inimigo. Essa função será alterada posteriormente para que possamos realizar a condição de "perder uma vida" para nosso personagem caso este toque no corpo do inimigo.
