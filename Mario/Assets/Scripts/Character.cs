@@ -70,8 +70,7 @@ public class Character : MonoBehaviour
     void FlipSprite()
     {
         lookingToTheRight = !lookingToTheRight;
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
+        transform.Rotate(0, 180, 0);
+        transform.Translate(-transform.localScale.x / 2, 0, 0);
     }
 }
