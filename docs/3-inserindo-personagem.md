@@ -157,7 +157,7 @@ void Jump()
 }
 ```
 
-Também adicionaremos a tag "Floor" aos colisores das plataformas.
+Também adicionaremos a tag "Floor" aos colisores das plataformas, e modificaremos a detecção de colisão do Mario para ```Continuous```.
 
 Já ```FixedUpdate``` agora precisa chamar a função ```Jump```:
 
