@@ -142,13 +142,12 @@ Já a função ```OnCollisionEnter2D``` avalia se está ocorrendo agora uma coli
 ```csharp
 private void OnCollisionEnter2D(Collision2D other)
 {
-    if (other.gameObject.CompareTag("TileMap"))
-        grounded = true;
+    if (other.gameObject.CompareTag("Floor")) grounded = true;
 }
 
-private void OnCollisionExit2D(Collision2D other) {
-    if (other.gameObject.CompareTag("TileMap"))
-        grounded = false;
+private void OnCollisionExit2D(Collision2D other)
+{
+    if (other.gameObject.CompareTag("Floor")) grounded = false;
 }
 
 void Jump()
@@ -157,6 +156,8 @@ void Jump()
     rb2d.velocity = new Vector2(rb2d.velocity.x, Mathf.Sign(rb2d.velocity.y) * maxVerticalSpeed);
 }
 ```
+
+Também adicionaremos a tag "Floor" aos colisores das plataformas.
 
 Já ```FixedUpdate``` agora precisa chamar a função ```Jump```:
 
