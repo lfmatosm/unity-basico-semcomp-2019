@@ -39,13 +39,20 @@ public class SimpleEnemy : MonoBehaviour
             if ((lookingToTheRight && speed < 0) || (!lookingToTheRight && speed > 0))
                 FlipSprite();
         }
+        if (other.GetType() == typeof(CircleCollider2D) && other.gameObject.CompareTag("Mario"))
+        {
+            this.Kill();
+        }
     }
+
 
     public void Kill()
     {
         animator.SetBool("IsAlive", false);
         deathTime = animator.GetCurrentAnimatorStateInfo(0).length + Time.time;
         isAlive = false;
+        body.isTrigger = true;
+        rb2d.gravityScale = 0;
     }
 
     void FlipSprite()

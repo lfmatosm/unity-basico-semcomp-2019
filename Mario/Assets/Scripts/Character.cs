@@ -39,6 +39,7 @@ public class Character : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        /*
         if (other.gameObject.CompareTag("SimpleEnemy"))
         {
             SimpleEnemy enemy = other.GetComponent<SimpleEnemy>();
@@ -47,6 +48,7 @@ public class Character : MonoBehaviour
                 enemy.Kill();
             }
         }
+        */
     }
 
     private void OnCollisionEnter2D(Collision2D other)

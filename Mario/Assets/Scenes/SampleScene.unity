@@ -710,6 +710,7 @@ GameObject:
   - component: {fileID: 1473325171}
   - component: {fileID: 1473325170}
   - component: {fileID: 1473325169}
+  - component: {fileID: 1473325174}
   m_Layer: 0
   m_Name: MapColliders
   m_TagString: Untagged
@@ -730,7 +731,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 11.104283, y: -11.978286}
+  m_Offset: {x: 11.104283, y: -11.992231}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -741,7 +742,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.810186, y: 6.0100803}
+  m_Size: {x: 9.810186, y: 5.982188}
   m_EdgeRadius: 0
 --- !u!61 &1473325161
 BoxCollider2D:
@@ -1090,6 +1091,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1.038784, y: 6.0216107}
+  m_EdgeRadius: 0
+--- !u!61 &1473325174
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473325159}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 46.50022, y: -6.000722}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.999573, y: 11.995783}
   m_EdgeRadius: 0
 --- !u!1 &1481578312
 GameObject:
@@ -11743,7 +11770,7 @@ GameObject:
   - component: {fileID: 1831626441}
   m_Layer: 0
   m_Name: Mario
-  m_TagString: Untagged
+  m_TagString: Mario
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11939,9 +11966,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.24729332, y: -0.58587885}
+  m_Offset: {x: 0.24956393, y: -0.5540127}
   serializedVersion: 2
-  m_Radius: 0.18679264
+  m_Radius: 0.20836373
 --- !u!1 &2007771592
 GameObject:
   m_ObjectHideFlags: 0
@@ -12063,12 +12090,12 @@ PrefabInstance:
     - target: {fileID: 1351227823109968182, guid: f71576cfede57813bb9bdaac7df3183d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.9
+      value: 8.56
       objectReference: {fileID: 0}
     - target: {fileID: 1351227823109968182, guid: f71576cfede57813bb9bdaac7df3183d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.24
+      value: -8.43
       objectReference: {fileID: 0}
     - target: {fileID: 1351227823109968182, guid: f71576cfede57813bb9bdaac7df3183d,
         type: 3}
