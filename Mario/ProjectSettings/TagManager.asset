@@ -8,6 +8,7 @@ TagManager:
   - TileMapGrid
   - SimpleEnemy
   - Mario
+  - Floor
   layers:
   - Default
   - TransparentFX

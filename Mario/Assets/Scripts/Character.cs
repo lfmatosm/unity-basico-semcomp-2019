@@ -13,6 +13,12 @@ public class Character : MonoBehaviour
     private bool lookingToTheRight = true;
     private bool grounded = true;
 
+    private bool isDead = false;
+    public BoxCollider2D body;
+    public CircleCollider2D feet;
+    Transform target;
+    public Sprite deathSprite;
+
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -27,6 +33,24 @@ public class Character : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
             Jump();
 
+        
+        if (Input.GetKeyDown("p"))
+        {
+            isDead = true;
+            target = transform;
+            target.transform.position = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
+        }
+
+        if (isDead)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = deathSprite;
+            transform.position = Vector3.MoveTowards(transform.position, target.position, 1 * Time.deltaTime);
+            body.isTrigger = true;
+            feet.isTrigger = true;
+        }
+
+
+
         if ((lookingToTheRight && h < 0) || (!lookingToTheRight && h > 0))
             FlipSprite();
 
@@ -35,6 +59,7 @@ public class Character : MonoBehaviour
 
         if (Mathf.Abs(rb2d.velocity.x) > maxSpeed)
             rb2d.velocity = new Vector2(Mathf.Sign(rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
+
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -66,5 +91,10 @@ public class Character : MonoBehaviour
         lookingToTheRight = !lookingToTheRight;
         transform.Rotate(0, 180, 0);
         transform.Translate(-transform.localScale.x / 2, 0, 0);
+    }
+
+    void Death()
+    {
+
     }
 }
