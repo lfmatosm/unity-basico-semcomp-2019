@@ -37,30 +37,22 @@ public class Character : MonoBehaviour
             rb2d.velocity = new Vector2(Mathf.Sign(rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        /*
-        if (other.gameObject.CompareTag("SimpleEnemy"))
-        {
-            SimpleEnemy enemy = other.GetComponent<SimpleEnemy>();
-            if (other == enemy.head)
-            {
-                enemy.Kill();
-            }
-        }
-        */
-    }
-
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("TileMap"))
+        if (other.gameObject.CompareTag("Floor"))
+        {
             grounded = true;
+        }
+            
+
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("TileMap"))
+        if (other.gameObject.CompareTag("Floor"))
+        {
             grounded = false;
+        }
     }
 
     void Jump()
