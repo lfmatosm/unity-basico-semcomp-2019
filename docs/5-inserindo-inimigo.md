@@ -168,4 +168,4 @@ Essa função verifica se o protagonista atingiu a cabeça do inimigo. Caso posi
 ##### Continuando...
 
 * [Anterior](4-camera-e-background.md)
-* [Próxima](6-manipulando-variaveis-do-personagem.md)
+* [Próxima](6-manipulando-estado-do-personagem.md)

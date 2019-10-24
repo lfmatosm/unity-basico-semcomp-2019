@@ -12,10 +12,6 @@ Minicurso básico em Unity 3D ministrado na Semana da Computação da Universida
 
 Os arquivos-texto com o roteiro de implementação encontram-se [aqui](https://github.com/lffloyd/unity-basico-semcomp-2019/tree/master/docs).
 
-## Créditos
-
-* [6growercrower4](https://www.seekpng.com/ipng/u2e6w7a9e6u2r5e6_conker-bfd-sprites-by-6growercrower4-d6zdp24-dutch-parliament/) - sprites do Conker
-
 ## Referências
 
 * [Manual do Unity Engine](https://docs.unity3d.com/Manual/UnityManual.html)
