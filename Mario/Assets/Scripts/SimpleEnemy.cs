@@ -45,6 +45,12 @@ public class SimpleEnemy : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Mario")){
+            other.gameObject.GetComponent<Character>().Death();
+        }
+    }
 
     public void Kill()
     {

@@ -9,6 +9,7 @@ TagManager:
   - SimpleEnemy
   - Mario
   - Floor
+  - Void
   layers:
   - Default
   - TransparentFX

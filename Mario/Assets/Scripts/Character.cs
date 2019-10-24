@@ -12,6 +12,7 @@ public class Character : MonoBehaviour
     private Rigidbody2D rb2d;
     private bool lookingToTheRight = true;
     private bool grounded = true;
+    Vector3 spawnPosition = new Vector3(-1.7f, -1.8f, 0);
 
     private bool isDead = false;
     public BoxCollider2D body;
@@ -28,8 +29,10 @@ public class Character : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetKeyDown("p"))
-            Death();
+
+
+        if (Input.GetKeyDown("return"))
+            Spawn();
 
         if (isDead)
         {
@@ -61,6 +64,10 @@ public class Character : MonoBehaviour
         {
             grounded = true;
         }
+        if (other.gameObject.CompareTag("Void"))
+        {
+            Death();
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
@@ -84,7 +91,7 @@ public class Character : MonoBehaviour
         transform.Translate(-transform.localScale.x / 2, 0, 0);
     }
 
-    void Death()
+    public void Death()
     {
         isDead = true;
         target = transform;
@@ -94,5 +101,14 @@ public class Character : MonoBehaviour
         spriteRenderer.sprite = deathSprite;
         body.isTrigger = true;
         feet.isTrigger = true;
+    }
+
+    void Spawn()
+    {
+        isDead = false;
+        animator.enabled = true;
+        body.isTrigger = false;
+        feet.isTrigger = false;
+        transform.position = spawnPosition;
     }
 }
