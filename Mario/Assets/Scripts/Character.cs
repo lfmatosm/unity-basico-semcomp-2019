@@ -28,36 +28,31 @@ public class Character : MonoBehaviour
 
     void FixedUpdate()
     {
-        float h = Input.GetAxis("Horizontal");
-
-        animator.SetFloat("Speed", Mathf.Abs(h));
-
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
-            Jump();
-
         if (Input.GetKeyDown("p"))
             Death();
 
         if (isDead)
         {
-            animator.enabled = false;
-            spriteRenderer.sprite = deathSprite;
-            transform.position = Vector3.MoveTowards(transform.position, target.position, 1 * Time.deltaTime);
-            body.isTrigger = true;
-            feet.isTrigger = true;
+            transform.position = Vector3.MoveTowards(transform.position, target.position, 0.1f * Time.deltaTime);
         }
+        else
+        {
+            float h = Input.GetAxis("Horizontal");
 
+            animator.SetFloat("Speed", Mathf.Abs(h));
 
+            if (Input.GetKeyDown(KeyCode.Space) && grounded)
+                Jump();
 
-        if ((lookingToTheRight && h < 0) || (!lookingToTheRight && h > 0))
-            FlipSprite();
+            if ((lookingToTheRight && h < 0) || (!lookingToTheRight && h > 0))
+                FlipSprite();
 
-        if (h * rb2d.velocity.x < maxSpeed)
-            rb2d.AddForce(Vector2.right * h * moveForce);
+            if (h * rb2d.velocity.x < maxSpeed)
+                rb2d.AddForce(Vector2.right * h * moveForce);
 
-        if (Mathf.Abs(rb2d.velocity.x) > maxSpeed)
-            rb2d.velocity = new Vector2(Mathf.Sign(rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
-
+            if (Mathf.Abs(rb2d.velocity.x) > maxSpeed)
+                rb2d.velocity = new Vector2(Mathf.Sign(rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -66,8 +61,6 @@ public class Character : MonoBehaviour
         {
             grounded = true;
         }
-            
-
     }
 
     private void OnCollisionExit2D(Collision2D other)
@@ -96,5 +89,10 @@ public class Character : MonoBehaviour
         isDead = true;
         target = transform;
         target.transform.position = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
+        animator.enabled = false;
+        rb2d.velocity = new Vector3(0, rb2d.velocity.y);
+        spriteRenderer.sprite = deathSprite;
+        body.isTrigger = true;
+        feet.isTrigger = true;
     }
 }
