@@ -71,7 +71,7 @@ Nessa função, pegamos a posição que será usada para animar a morte, desativ
 Agora precisamos que a morte seja acionada:
 
 Adicionaremos colisores em todos os buracos da fase.
-[Localização do sprite no projeto](images/6/1.png?raw=true "Void")
+![Colisores do vazio](images/6/1.png?raw=true "Void")
 
 Todos eles com a tag ```Void```, para podermos adicionar esse if no OnCollisionEnter2D do personagem.
 
