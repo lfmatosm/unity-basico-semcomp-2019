@@ -29,8 +29,6 @@ public class Character : MonoBehaviour
 
     void FixedUpdate()
     {
-
-
         if (Input.GetKeyDown("return"))
             Spawn();
 
