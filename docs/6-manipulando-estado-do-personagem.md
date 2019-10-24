@@ -91,7 +91,34 @@ private void OnCollisionEnter2D(Collision2D other)
     }
 }
 ```
+### Respawnando o personagem.
 
+Para respawnar primeiro criaremos uma função de ```Respawn()```, revertando a função ```Death()```.
+
+```csharp
+void Spawn()
+{
+    isDead = false;
+    animator.enabled = true;
+    body.isTrigger = false;
+    feet.isTrigger = false;
+    transform.position = spawnPosition;
+}
+``` 
+
+Adicionaremos esse if no ```FixedUpdate()``` para que o personagem respawne ao apertar Enter.
+
+```csharp
+if (Input.GetKeyDown("return"))
+    Spawn();
+```
+
+O último detalhe será adicionar uma variável com a posição inicial da fase.
+```csharp
+Vector3 spawnPosition = new Vector3(-1.7f, -1.8f, 0);
+```
+
+Com essas alterações o personagem poderá morrer e renascer!
 
 ##### Fim!
 
